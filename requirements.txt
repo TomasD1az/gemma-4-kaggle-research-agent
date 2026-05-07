@@ -1,0 +1,10 @@
+unsloth
+transformers
+llama-cpp-python
+langchain
+chromadb
+pandas
+matplotlib
+pydantic
+sentence-transformers
+streamlit
