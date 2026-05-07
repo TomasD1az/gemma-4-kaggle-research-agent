@@ -31,7 +31,7 @@ class LocalPythonSandbox:
         try:
             completed = subprocess.run(
                 [sys.executable, str(script_path)],
-                cwd=str(self.workspace.parent.resolve()),
+                cwd=str(self.workspace.resolve()),
                 capture_output=True,
                 text=True,
                 timeout=self.timeout_seconds,
