@@ -1,14 +1,16 @@
 import unittest
-from pathlib import Path
+from tempfile import TemporaryDirectory
 
 from sandbox.runner import LocalPythonSandbox
 
 
 class LocalPythonSandboxTests(unittest.TestCase):
     def setUp(self) -> None:
-        self.workspace = Path("/tmp/gemma4-test-output")
-        self.workspace.mkdir(parents=True, exist_ok=True)
-        self.sandbox = LocalPythonSandbox(workspace=self.workspace)
+        self.temp_dir = TemporaryDirectory()
+        self.sandbox = LocalPythonSandbox(workspace=self.temp_dir.name)
+
+    def tearDown(self) -> None:
+        self.temp_dir.cleanup()
 
     def test_run_python_success(self):
         result = self.sandbox.run_python("print('ok')")
