@@ -6,7 +6,7 @@ from trl import SFTTrainer
 from transformers import TrainingArguments
 
 
-MODEL_NAME = "unsloth/gemma-3-31b-it-bnb-4bit"
+MODEL_NAME = "unsloth/gemma-4-31b-it-bnb-4bit"
 DATASET_NAME = "scientific_papers"
 OUTPUT_DIR = "output/unsloth-finetune"
 

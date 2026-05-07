@@ -1,6 +1,6 @@
 from __future__ import annotations
 
-from typing import List
+from typing import Any, List
 
 try:
     from pydantic import BaseModel, Field
@@ -10,7 +10,7 @@ except ImportError:  # pragma: no cover - fallback for lightweight environments
             for key, value in kwargs.items():
                 setattr(self, key, value)
 
-    def Field(default: str = "", description: str = "") -> str:
+    def Field(default: Any = "", description: str = "") -> Any:
         return default
 
 
