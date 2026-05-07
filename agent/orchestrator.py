@@ -6,7 +6,7 @@ from typing import List
 
 from sandbox.runner import LocalPythonSandbox, SandboxRunResult
 
-from .executor import ExecutorE4B
+from .executor import PythonCodeExecutor
 from .planner import Planner31B
 from .security import monitor_external_calls
 from .types import StepExecutionResult
@@ -25,7 +25,7 @@ class AutonomousLabOrchestrator:
     def __init__(self, output_directory: Path | str = "output") -> None:
         self.output_directory = Path(output_directory)
         self.planner = Planner31B()
-        self.executor = ExecutorE4B()
+        self.executor = PythonCodeExecutor()
         self.sandbox = LocalPythonSandbox(workspace=self.output_directory)
 
     def _execute_call(self, function_call: dict) -> SandboxRunResult:
