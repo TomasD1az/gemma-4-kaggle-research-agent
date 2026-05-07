@@ -25,5 +25,5 @@ streamlit run app.py
 ### Notes on model loading (4090 focus)
 
 - Load Gemma 4 31B (Q4_K_M) through `llama-cpp-python` with maximum practical `n_gpu_layers`.
-- Run executor model (E2B/E4B) as a smaller secondary process.
+- Run the executor model (`E2B/E4B` denotes smaller Gemma executor variants) as a secondary process.
 - Keep combined footprint near ~20GB VRAM to preserve workspace and KV cache headroom.

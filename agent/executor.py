@@ -3,7 +3,7 @@ from __future__ import annotations
 from typing import Dict
 
 
-class ExecutorE4B:
+class PythonCodeExecutor:
     """Code-focused executor that emits native function-call payloads."""
 
     def generate_function_call(self, step_objective: str, query: str) -> Dict[str, object]:
@@ -27,3 +27,6 @@ class ExecutorE4B:
             "print('Recovery execution completed.')\n"
         )
         return {"name": "run_python", "arguments": {"code": code}}
+
+
+ExecutorE4B = PythonCodeExecutor
