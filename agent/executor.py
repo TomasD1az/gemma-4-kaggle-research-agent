@@ -27,6 +27,3 @@ class PythonCodeExecutor:
             "print('Recovery execution completed.')\n"
         )
         return {"name": "run_python", "arguments": {"code": code}}
-
-
-ExecutorE4B = PythonCodeExecutor
